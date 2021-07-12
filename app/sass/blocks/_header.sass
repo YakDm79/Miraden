@@ -1,0 +1,31 @@
+.header
+  margin: 0 auto
+  background-color: #fff
+  padding: 17px 0 24px 0
+  border-radius: 5px
+  max-width: 1880px
+  margin-bottom: 17px
+  a
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 140%
+    color: $text-sec
+    @media (min-width: 993px)
+      &:hover
+        color: $text-main
+  &__menu, &__menu-list, &__menu-social
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo
+    margin-right: 106px
+  &__menu-list
+    flex: 1 1 100%
+    justify-content: flex-start
+    padding-left: 0
+    li
+      margin-right: 40px
+  &__menu-social
+    li
+      margin-left: 30px
