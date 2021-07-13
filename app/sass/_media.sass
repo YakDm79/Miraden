@@ -16,36 +16,36 @@
 
   // Ховер ссылок (плавное подчеркивание) ----------------------------------------------------------
 
-  .navbar
-    &-menu
-      &__link
-        display: inline-block
-        line-height: 1
-        text-decoration: none
-        cursor: pointer
-        position: relative
-        &::after
-          display: block
-          content: ""
-          height: 3px
-          width: 0%
-          left: 50%
-          position: absolute
-          background-color: #1565D8
-          -webkit-transition: width .3s ease-in-out
-          -moz--transition: width .3s ease-in-out
-          transition: width .3s ease-in-out
-          -webkit-transform: translateX(-50%)
-          -moz-transform: translateX(-50%)
-          transform: translateX(-50%)
-          margin-top: 3px
-        &:hover::after, &:focus::after
-          width: 100%
-    &-button
-      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
-      &:hover
-        background-color: #1565D8
-        color: #fff
+  // .navbar
+  //   &-menu
+  //     &__link
+  //       display: inline-block
+  //       line-height: 1
+  //       text-decoration: none
+  //       cursor: pointer
+  //       position: relative
+  //       &::after
+  //         display: block
+  //         content: ""
+  //         height: 3px
+  //         width: 0%
+  //         left: 50%
+  //         position: absolute
+  //         background-color: #1565D8
+  //         -webkit-transition: width .3s ease-in-out
+  //         -moz--transition: width .3s ease-in-out
+  //         transition: width .3s ease-in-out
+  //         -webkit-transform: translateX(-50%)
+  //         -moz-transform: translateX(-50%)
+  //         transform: translateX(-50%)
+  //         margin-top: 3px
+  //       &:hover::after, &:focus::after
+  //         width: 100%
+  //   &-button
+  //     transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+  //     &:hover
+  //       background-color: #1565D8
+  //       color: #fff
 
   // Ховер конопок (свечение) ----------------------------------------------------------------------
   // .button
@@ -59,3 +59,87 @@
   //     outline-color: rgba(255, 255, 255, 0)
   //     outline-offset: 15px
   //     text-shadow: 1px 1px 2px #427388
+
+@media (max-width: 993px)
+  .header
+    &__logo
+      margin-right: 0
+    &__menu-list
+      justify-content: center
+      padding-left: 0
+      a
+        font-size: 14px
+      li
+        margin-right: 15px
+    &__menu-item:last-child
+      margin-right: 0
+    &__menu-social
+      padding-left: 0
+      a
+        font-size: 14px
+
+@media (max-width: 768px)
+  .header
+    position: relative
+    &__menu-list, &__menu-social
+      display: none
+    &__menu-list
+      transform: translateX(100%)
+      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+      &.header__menu-list--active
+        transform: translateX(0%)
+        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+    &__menu-item.social-item
+      display: block
+    &__menu-item.social-item.mobile-menu
+      margin-top: 80px
+    &__menu-list--active
+      position: absolute
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      top: -16px
+      right: 0
+      width: 320px
+      height: 100vh
+      background-color: $bg-dark
+      padding: 80px 6%
+      transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+      li
+        margin-bottom: 10px
+      a
+        font-size: 18px
+        color: $text-gold
+
+    &__menu-burger
+      position: relative
+      display: block
+      width: 36px
+      height: 17px
+      background-color: transparent
+      border: none
+      span
+        position: absolute
+        width: 36px
+        height: 3px
+        background-color: $text-sec
+        transform: translateX(-50%)
+        &::after
+          content: ''
+          position: absolute
+          top: 0%
+          left: 0
+          width: 25px
+          height: 3px
+          background-color: $text-sec
+          margin-top: 7px
+        &::before
+          content: ''
+          position: absolute
+          bottom: 0%
+          left: 0
+          width: 100%
+          height: 3px
+          background-color: $text-sec
+          margin-bottom: 7px
