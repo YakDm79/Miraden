@@ -32,18 +32,20 @@ $(".offer__aside-btn").on("click", function () {
 $(".offer__aside-btn-1").on("click", function () {
   $(".offer__aside-quiz-1").toggleClass("offer__aside-quiz-1--active");
 });
+$(".offer__aside-btn-2").on("click", function () {
+  $(".offer__aside-quiz-2").toggleClass("offer__aside-quiz-2--active");
+});
 $(".offer__aside-btn-left").on("click", function () {
   $(".offer__aside-quiz").removeClass("offer__aside-quiz--active");
 });
 $(".offer__aside-btn-left-1").on("click", function () {
   $(".offer__aside-quiz-1").removeClass("offer__aside-quiz-1--active");
 });
-// $('.offer__aside-input').on('click', function () {
-//   if ($(this).prop('checked') === true) {
-//     $(".offer__aside-checkbox").addClass("offer__aside-checkbox--gold");
-//     $(".offer__aside-label").addClass("offer__aside-label--gold");
-//   }
-// })
+$(".offer__aside-btn-left-2").on("click", function () {
+  $(".offer__aside-quiz-2").removeClass("offer__aside-quiz-2--active");
+});
+
+
 const checkInputsLabel = document.querySelectorAll('.offer__aside-chk');
 if (checkInputsLabel) {
   for (let item of checkInputsLabel) {
@@ -62,29 +64,11 @@ if (checkInputsLabel) {
     })
   }
 }
-// const checkLabel = document.querySelectorAll('.offer__aside-label');
-// if (checkLabel) {
-//   for (let item of checkLabel) {
-//     const thisInput = item.querySelector('input');
-//     item.addEventListener('click', function () {
-//       thisInput.checked = !thisInput.checked;
 
-//       if (thisInput.checked) {
-//         this.classList.remove('offer__aside-label--gold');
 
-//       }
-//       else {
-//         this.classList.add('offer__aside-label--gold');
-
-//       }
-//     })
-//   }
-// }
 const checkInputsRadio = document.querySelectorAll('#box');
 const checkBox = document.querySelectorAll('#chk');
 const checkLabelRadio = document.querySelectorAll('.offer__aside-label');
-
-console.log(checkBox)
 
 function check(e) {
   for (let item of checkLabelRadio) {
@@ -102,28 +86,32 @@ checkLabelRadio.forEach(label => {
   })
 })
 
+const choiceLabel = document.querySelectorAll('.offer__aside-choice-label');
+const checkQuiz2Radio = document.querySelectorAll('.offer__aside-quiz2')
 
-// checkBox.forEach(label => {
-//   // label.addEventListener('click', check)
-//   label.addEventListener('click', function () {
-//     this.classList.add('offer__aside-chk--gold')
-//     console.log('asas')
-//   })
-// })
-// if (checkInputsRadio) {
-//   for (let item of checkInputsRadio) {
-//     const thisInput = item.querySelector('input[type=radio]');
-//     item.addEventListener('click', function () {
-//       thisInput.checked = !thisInput.checked;
-
-//       if (thisInput.checked) {
-//         this.classList.add('offer__aside-checkbox--gold');
-
-//       }
-//       else {
-//         this.classList.remove('offer__aside-checkbox--gold');
-
-//       }
-//     })
-//   }
-// }
+function checkChoice(e) {
+  for (let item of choiceLabel) {
+    choiceLabel.forEach(label => {
+      label.classList.remove('offer__aside-choice-label--gold')
+    })
+  }
+}
+function checkQuiz2(e) {
+  for (let item of checkQuiz2Radio) {
+    checkQuiz2Radio.forEach(label => {
+      label.classList.remove('offer__aside-quiz2--gold')
+    })
+  }
+}
+choiceLabel.forEach(label => {
+  label.addEventListener('click', checkChoice)
+  label.addEventListener('click', function () {
+    this.classList.add('offer__aside-choice-label--gold')
+  })
+})
+checkQuiz2Radio.forEach(label => {
+  label.addEventListener('click', checkQuiz2)
+  label.addEventListener('click', function () {
+    this.classList.add('offer__aside-quiz2--gold')
+  })
+})

@@ -137,7 +137,7 @@
   &-title
     font-style: normal
     font-weight: 500
-    font-size: 28px
+    font-size: 22px
     line-height: 140%
     letter-spacing: 0.05em
     color: $text-gold
@@ -157,7 +157,7 @@
     left: 0
     right: 0
 
-.offer__aside-quiz, .offer__aside-quiz-1
+.offer__aside-quiz, .offer__aside-quiz-1, .offer__aside-quiz-2
   position: absolute
   top: 0
   bottom: 0
@@ -252,3 +252,45 @@
     letter-spacing: 0.16em
     span
       color: $text-gold
+  &-choice
+    margin-bottom: 20px
+  &-choice-input
+    position: absolute
+    width: 1px
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    padding-left: 22px
+  &-style-2
+    position: absolute
+    margin-left: -25px
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    border: 2px solid rgba(165, 165, 165, 0.5)
+    top: 0
+  &-choice-label
+    position: relative
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 150%
+    color: #A5A5A5
+    &-1
+      margin-left: 25px
+    &-2, &-3
+      margin-left: 60px
+    &--gold
+      color: $text-gold
+  &-quiz2
+    &--gold
+      color: $text-gold
+      border-color: $text-gold
+.offer__aside-choice-input:checked + .offer__aside-style-2::before
+  content: ''
+  position: absolute
+  width: 18px
+  height: 18px
+  background-image: url(../img/choice-enabled.svg)
+  top: -2px
+  left: -2px
