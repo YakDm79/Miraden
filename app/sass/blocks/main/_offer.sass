@@ -1,5 +1,9 @@
 .offer
   overflow: hidden
+  max-width: 1880px
+  background-color: #F1F6FA
+  margin: 0 auto
+  // position: relative
   &__inner
     display: flex
     align-items: center
@@ -7,20 +11,94 @@
   &__main
     flex: 0 0 40%
     min-width: 0
+    margin-right: 100px
+    &-title
+      font-style: normal
+      font-weight: bold
+      font-size: 38px
+      line-height: 120%
+      color: $text-main
+      margin-bottom: 62px
+    &-text
+      font-style: normal
+      font-weight: normal
+      font-size: 20px
+      line-height: 150%
+      color: $text-main
+      margin-bottom: 50px
+      max-width: 400px
+    &-button
+      padding: 18px 20px 18px 31px
+      border-radius: 5px
+      background-color: $text-gold
+      font-style: normal
+      font-weight: 500
+      font-size: 18px
+      line-height: 132%
+      color: #FFFFFF
+      border: none
+      cursor: pointer
+    &-arrow
+      margin-left: 10px
   &__slider
     min-width: 0
     max-height: 900px
+    width: 210px
     // flex: 0 0 60%
     // height: 900px
     &-item
       margin-bottom: 30px
       width: 180px
       height: 230px
-      border: 1px solid #000
+      box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.15)
+      border-radius: 20px
+      padding: 20px 15px
+    &-country
+      font-style: normal
+      font-weight: 500
+      font-size: 10px
+      line-height: 132%
+      padding: 1px 7px
+      background-color: #84C57A
+      border-radius: 50px
+      color: #fff
+    &-title
+      font-style: normal
+      font-weight: 500
+      font-size: 13px
+      line-height: 140%
+      color: $text-main
+    &-sqr
+      display: inline-block
+      font-style: normal
+      font-weight: normal
+      font-size: 11px
+      line-height: 132%
+      color: $text-sec
+      margin-bottom: 50px
+      &-digit
+        color: $text-main
+    &-urgency, &-price
+      display: inline-block
+      font-style: normal
+      font-weight: normal
+      font-size: 13px
+      line-height: 132%
+      color: rgba(79, 79, 79, 0.5)
+      &-long, &-digit
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 132%
+        color: $text-gold
+    &-urgency
+      margin-bottom: 10px
+    &-price
+      margin-bottom: 20px
   &__slider-1
     width: 210px
   &__slider-wrapper
-    width: 210px
+    width: 180px
     min-width: 0
     padding-bottom: 125px
     // width: 600px
@@ -30,8 +108,147 @@
   &__slider-wrapper-3
     padding-top: 260px
 .slick-slide
-  max-width: 180px
+  width: 180px !important
   margin-right: 30px
   margin-top: 20px
 .slick-list
   overflow: visible
+.offer__aside
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: $bg-dark
+  width: 560px
+  padding: 30px 120px 0 120px
+  z-index: 101
+  display: flex
+  flex-direction: column
+  transition: all .5s
+  transform: translateX(-150%)
+  &--active
+    transform: translateX(0%)
+  &-logo
+    width: 160px
+    height: 32px
+    margin-bottom: 183px
+    // position: absolute
+    // top: 30px
+  &-title
+    font-style: normal
+    font-weight: 500
+    font-size: 28px
+    line-height: 140%
+    letter-spacing: 0.05em
+    color: $text-gold
+  &-text
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 150%
+    color: $text-sec
+    margin-bottom: 40px
+
+  &-arrow
+    margin-left: 15px
+  &-bottom
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+
+.offer__aside-quiz, .offer__aside-quiz-1
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: $bg-dark
+  width: 560px
+  padding: 30px 120px 0 120px
+  z-index: 101
+  display: flex
+  flex-direction: column
+  transition: all .5s
+  transform: translateX(-150%)
+  &--active
+    transform: translateX(0%)
+.offer__aside
+  &-hint
+    display: inline-block
+    max-width: 185px
+    font-style: normal
+    font-weight: normal
+    font-size: 12px
+    line-height: 150%
+    color: #A5A5A5
+    padding: 5px 10px 7px 9px
+    background-color: #403F3F
+    border-radius: 50px
+    margin-bottom: 20px
+  &-checkbox
+    // &:hover
+    //   border: 1px solid #CEAC6A
+  &-label
+    &--gold
+      border: 2px solid $text-gold
+  &-chk
+    &--gold
+      color: $text-gold
+      border-color: $text-gold
+  &-input
+    position: absolute
+    width: 1px
+    height: 1px
+    overflow: hidden
+    clip: rect(0 0 0 0)
+    padding-left: 22px
+  &-style
+    position: absolute
+    margin-left: -25px
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    border: 2px solid rgba(165, 165, 165, 0.5)
+  &-style-1
+    position: absolute
+    margin-left: -25px
+    width: 18px
+    height: 18px
+    // border-radius: 50%
+    border: 2px solid rgba(165, 165, 165, 0.5)
+
+.offer__aside-input:checked + .offer__aside-style::before
+  content: ''
+  position: absolute
+  width: 18px
+  height: 18px
+  background-image: url(../img/checkbox-enable.svg)
+  top: -2px
+  left: -2px
+.offer__aside-input:checked + .offer__aside-style-1::before
+  content: ''
+  position: absolute
+  width: 18px
+  height: 18px
+  background-image: url(../img/checkbox-enable-1.svg)
+  top: -2px
+  left: -2px
+.offer__aside-label--gold
+  color: $text-gold
+// .offer__aside-checkbox:focus-within
+//   border: 1px solid $text-gold
+// .offer__aside-label:focus-within
+//   color: $text-gold
+.offer__aside
+  &-buttons
+    margin-bottom: 20px
+  &-counter
+    text-align: center
+    font-family: Oswald
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 152%
+    letter-spacing: 0.16em
+    span
+      color: $text-gold
