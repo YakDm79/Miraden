@@ -35,6 +35,15 @@ $(".offer__aside-btn-1").on("click", function () {
 $(".offer__aside-btn-2").on("click", function () {
   $(".offer__aside-quiz-2").toggleClass("offer__aside-quiz-2--active");
 });
+$(".offer__aside-btn-3").on("click", function () {
+  $(".offer__aside-quiz-3").toggleClass("offer__aside-quiz-3--active");
+});
+$(".offer__aside-btn-4").on("click", function () {
+  $(".offer__aside-quiz-4").toggleClass("offer__aside-quiz-4--active");
+});
+$(".offer__aside-btn-5").on("click", function () {
+  $(".offer__aside-quiz-5").toggleClass("offer__aside-quiz-5--active");
+});
 $(".offer__aside-btn-left").on("click", function () {
   $(".offer__aside-quiz").removeClass("offer__aside-quiz--active");
 });
@@ -43,6 +52,15 @@ $(".offer__aside-btn-left-1").on("click", function () {
 });
 $(".offer__aside-btn-left-2").on("click", function () {
   $(".offer__aside-quiz-2").removeClass("offer__aside-quiz-2--active");
+});
+$(".offer__aside-btn-left-3").on("click", function () {
+  $(".offer__aside-quiz-3").removeClass("offer__aside-quiz-3--active");
+});
+$(".offer__aside-btn-left-4").on("click", function () {
+  $(".offer__aside-quiz-4").removeClass("offer__aside-quiz-4--active");
+});
+$(".offer__aside-btn-left-5").on("click", function () {
+  $(".offer__aside-quiz-5").removeClass("offer__aside-quiz-5--active");
 });
 
 
@@ -87,19 +105,11 @@ checkLabelRadio.forEach(label => {
 })
 
 const choiceLabel = document.querySelectorAll('.offer__aside-choice-label');
-const checkQuiz2Radio = document.querySelectorAll('.offer__aside-quiz2')
 
 function checkChoice(e) {
   for (let item of choiceLabel) {
     choiceLabel.forEach(label => {
       label.classList.remove('offer__aside-choice-label--gold')
-    })
-  }
-}
-function checkQuiz2(e) {
-  for (let item of checkQuiz2Radio) {
-    checkQuiz2Radio.forEach(label => {
-      label.classList.remove('offer__aside-quiz2--gold')
     })
   }
 }
@@ -109,9 +119,80 @@ choiceLabel.forEach(label => {
     this.classList.add('offer__aside-choice-label--gold')
   })
 })
+
+const checkQuiz2Radio = document.querySelectorAll('.offer__aside-quiz2')
+
+function checkQuiz2(e) {
+  for (let item of checkQuiz2Radio) {
+    checkQuiz2Radio.forEach(label => {
+      label.classList.remove('offer__aside-quiz2--gold')
+    })
+  }
+}
+
 checkQuiz2Radio.forEach(label => {
   label.addEventListener('click', checkQuiz2)
   label.addEventListener('click', function () {
     this.classList.add('offer__aside-quiz2--gold')
   })
+})
+const checkQuiz3Radio = document.querySelectorAll('.offer__aside-quiz3')
+
+function checkQuiz3(e) {
+  for (let item of checkQuiz3Radio) {
+    checkQuiz3Radio.forEach(label => {
+      label.classList.remove('offer__aside-quiz3--gold')
+    })
+  }
+}
+
+checkQuiz3Radio.forEach(label => {
+  label.addEventListener('click', checkQuiz3)
+  label.addEventListener('click', function () {
+    this.classList.add('offer__aside-quiz3--gold')
+  })
+})
+const checkQuiz4Radio = document.querySelectorAll('.offer__aside-quiz4')
+
+function checkQuiz4(e) {
+  for (let item of checkQuiz4Radio) {
+    checkQuiz4Radio.forEach(label => {
+      label.classList.remove('offer__aside-quiz4--gold')
+    })
+  }
+}
+
+checkQuiz4Radio.forEach(label => {
+  label.addEventListener('click', checkQuiz4)
+  label.addEventListener('click', function () {
+    this.classList.add('offer__aside-quiz4--gold')
+  })
+})
+
+document.querySelector('.offer__aside-quiz3-message').addEventListener('input',
+  function (e) {
+    this.value = this.value.replace(/[^\d.]/g, '');
+  }
+)
+document.querySelector('.offer__aside-quiz3-message-right').addEventListener('input',
+  function (e) {
+    this.value = this.value.replace(/[^\d.]/g, '');
+  }
+)
+document.querySelector('.offer__aside-quiz4-message').addEventListener('input',
+  function (e) {
+    this.value = this.value.replace(/[^\d.]/g, '');
+  }
+)
+document.querySelector('.offer__aside-quiz4-message-right').addEventListener('input',
+  function (e) {
+    this.value = this.value.replace(/[^\d.]/g, '');
+  }
+)
+
+const msgQuiz3 = document.querySelector('.offer__aside-quiz3-message')
+const inputQuiz3 = document.querySelectorAll('.label-inner offer__aside-quiz3-msg')
+msgQuiz3.addEventListener('click', function () {
+  const quizInput = document.querySelector('.offer__aside-input-msg');
+  quizInput.setAttribute('checked', 'true');
 })

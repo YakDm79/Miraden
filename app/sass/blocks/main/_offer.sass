@@ -157,7 +157,7 @@
     left: 0
     right: 0
 
-.offer__aside-quiz, .offer__aside-quiz-1, .offer__aside-quiz-2
+.offer__aside-quiz, .offer__aside-quiz-1, .offer__aside-quiz-2, .offer__aside-quiz-3, .offer__aside-quiz-4, .offer__aside-quiz-5
   position: absolute
   top: 0
   bottom: 0
@@ -186,8 +186,7 @@
     border-radius: 50px
     margin-bottom: 20px
   &-checkbox
-    // &:hover
-    //   border: 1px solid #CEAC6A
+    // position: relative
   &-label
     &--gold
       border: 2px solid $text-gold
@@ -209,6 +208,8 @@
     height: 18px
     border-radius: 50%
     border: 2px solid rgba(165, 165, 165, 0.5)
+    top: 50%
+    transform: translateY(-45%)
   &-style-1
     position: absolute
     margin-left: -25px
@@ -282,7 +283,7 @@
       margin-left: 60px
     &--gold
       color: $text-gold
-  &-quiz2
+  &-quiz2, &-quiz3, &-quiz4, &-quiz5
     &--gold
       color: $text-gold
       border-color: $text-gold
@@ -294,3 +295,120 @@
   background-image: url(../img/choice-enabled.svg)
   top: -2px
   left: -2px
+.offer__aside-social-input:checked + .offer__aside-style-2::before
+  content: ''
+  position: absolute
+  width: 18px
+  height: 18px
+  background-image: url(../img/choice-enabled.svg)
+  top: -2px
+  left: -2px
+.offer__aside-quiz3, .offer__aside-quiz4
+  &-msg
+    padding-top: 16px
+  &-message
+    background-color: transparent
+    border: none
+    outline: none
+    resize: none
+    width: 45%
+    height: 30px
+    white-space: nowrap
+    overflow-x: hidden
+    padding-right: 10px
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 150%
+    color: #A5A5A5
+    &-left
+      width: 40%
+      margin-right: 20px
+    &::placeholder
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 150%
+      color: #A5A5A5
+  &-border
+    width: 2px
+    height: 100%
+    position: absolute
+    top: 0
+    z-index: 111
+    left: 50%
+    background-color: rgba(165, 165, 165, 0.5)
+.offer__aside-quiz3--gold .offer__aside-quiz3-message
+  color: $text-gold
+.offer__aside-quiz3--gold .offer__aside-quiz3-border
+  background-color: $text-gold
+.offer__aside-quiz4--gold .offer__aside-quiz4-message
+  color: $text-gold
+.offer__aside-quiz4--gold .offer__aside-quiz4-border
+  background-color: $text-gold
+.offer__aside-social-input
+  position: absolute
+  width: 1px
+  height: 1px
+  overflow: hidden
+  clip: rect(0 0 0 0)
+  padding-left: 22px
+.offer__aside-style-social-1
+  left: 25px
+.offer__aside-style-social-2
+  left: 165px
+.offer__aside-style-social-3
+  left: 255px
+.offer__aside-social-label-1
+  margin-left: 25px
+.offer__aside-social-label-2
+  margin-left: 60px
+.offer__aside-social-label-3
+  margin-left: 50px
+.offer__aside-btn-6
+  padding: 18px 30px
+  position: absolute
+  top: 357px
+  left: 80px
+#quiz5
+  position: relative
+  input:focus ~ label
+    top: -10px
+    left: 10px
+    font-size: 11px
+    background-color: $bg-dark
+    padding: 2px 10px
+.offer__aside-quiz5
+  position: absolute
+  top: 10px
+  transition: all 200ms
+  // pointer-events: none
+  &-name
+    top: 85px
+  &-email
+    top: 160px
+  &-phone
+    top: 235px
+.offer__aside-social
+  position: absolute
+  top: 715px
+.offer__aside-buttons-quiz5
+  position: relative
+.offer__aside-btn-left-5
+  position: absolute
+  top: 365px
+.offer__aside-quiz-5-input
+  position: absolute
+  overflow: hidden
+  padding-left: 22px
+  background-color: transparent
+  border: none
+  outline: none
+  color: $text-gold
+// .offer__aside-quiz-5-input:focus .offer__aside-quiz-5
+
+//   top: -10px
+//   left: 10px
+//   font-size: 11px
+//   background-color: $bg-dark
+//   padding: 2px 10px
